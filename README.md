@@ -7,7 +7,7 @@
 ---
 Completed Projects✔️
 ---
-1. [Restaurant's Revenue Prediction](./path/to/Revenue_Prediction.py)
+1. [Restaurant's Revenue Prediction](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Revenue_Prediction.py)
 * Data Preprocessing
   * Features selection 
   * Standarization
