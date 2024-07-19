@@ -7,7 +7,7 @@
 ---
 Completed Projects✔️
 ---
-1. Restaurant's Revenue Prediction
+1. [Restaurant's Revenue Prediction](./path/to/Revenue_Prediction.py)
 * Data Preprocessing
   * Features selection 
   * Standarization
