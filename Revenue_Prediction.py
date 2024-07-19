@@ -1,3 +1,4 @@
+#%%
 #Importing data and required packages
 import pandas as pd
 import numpy as np
@@ -16,12 +17,13 @@ from catboost import CatBoostRegressor
 from xgboost import XGBRegressor
 from sklearn.preprocessing import LabelEncoder
 import optuna
-
 data = pd.read_csv("C:/Users/USER/Downloads/data/Restaurant_revenue (1).csv", encoding = 'utf8')
 df = pd.DataFrame(data)
 pd.set_option('display.max_columns',None)
 #Checking missing value
 print(df.isnull().sum())
+#%%
+
 #Obseving correlation between each columns 
 dummies = pd.get_dummies(df['Cuisine_Type'] , drop_first=False).astype(int)
 df = pd.concat([df, dummies], axis=1)
@@ -139,6 +141,7 @@ print(Comparison_before)
 print('After tuning')
 print(Comparison_after)
 print(f'Lasso result : MSE = {lasso_test_mse},R2 = {lasso_test_r2}, Intercept = {best_lasso.intercept_}, Coef : {best_lasso.coef_}')
-print('Testing')
+print('test2')
 
 
+# %%
