@@ -151,8 +151,8 @@ st_y_test_pred = stacking_regressor.predict(x_test)
 st_test_mae, st_test_mse, st_test_r2 = evaluation(y_test, st_y_test_pred)
 st_train_mae, st_train_mse, st_train_r2 = evaluation(y_train, st_y_train_pred)
 cv_scores_st = cross_val_score(stacking_regressor, x_train, y_train, cv=10, scoring='r2', n_jobs=-1)
-lasso_data = ['Stacking Regressor', st_train_mae, st_train_mse, st_train_r2, st_test_mae, st_test_mse, st_test_r2, cv_scores_st.mean()]
-Comparison_after.loc[9] = lasso_data
+st_data = ['Stacking Regressor', st_train_mae, st_train_mse, st_train_r2, st_test_mae, st_test_mse, st_test_r2, cv_scores_st.mean()]
+Comparison_after.loc[9] = st_data
 Comparison_after = Comparison_after.sort_values(by = ['Test R2'],ascending=False)
 
 #Results comparison
