@@ -139,4 +139,5 @@ print(Comparison_before)
 print('After tuning')
 print(Comparison_after)
 print(f'Lasso result : MSE = {lasso_test_mse},R2 = {lasso_test_r2}, Intercept = {best_lasso.intercept_}, Coef : {best_lasso.coef_}')
+print('test')
 
