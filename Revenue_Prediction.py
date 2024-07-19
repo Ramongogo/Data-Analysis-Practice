@@ -86,7 +86,7 @@ models = {'Linear Regression':LinearRegression(),"Lasso":Lasso(),"Ridge":Ridge()
 
 results_before = []
 results_after = []
-#Before tuning resluts
+#Before tuning results
 for model_name, model in models.items():
     model.fit(x_train,y_train)
     y_train_pred = model.predict(x_train)
@@ -138,11 +138,13 @@ cv_scores_lasso = cross_val_score(best_lasso, x_train, y_train, cv=10, scoring='
 lasso_data = ['Best_Lasso', lasso_train_mae,lasso_train_mse,lasso_train_r2,lasso_test_mae,lasso_test_mse,lasso_test_r2,cv_scores_lasso.mean()]
 Comparison_after.loc[8] = lasso_data
 Comparison_after = Comparison_after.sort_values(by = ['Test R2'],ascending=False)
+
 #Results comparison
 print('Before tuning')
 print(Comparison_before)
 print('After tuning')
 print(Comparison_after)
+print('-'*40)
 print(f'Lasso optuna result : MSE = {lasso_test_mse},R2 = {lasso_test_r2}, Intercept = {best_lasso.intercept_}, Coef : {best_lasso.coef_}')
 
 
