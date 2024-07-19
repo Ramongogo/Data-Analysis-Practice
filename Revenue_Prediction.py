@@ -5,7 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.tree import DecisionTreeRegressor
-from sklearn.ensemble import RandomForestRegressor,AdaBoostRegressor
+from sklearn.ensemble import RandomForestRegressor,AdaBoostRegressor, StackingRegressor
 from sklearn.svm import SVR
 from sklearn.linear_model import LinearRegression, Ridge,Lasso
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
@@ -137,6 +137,22 @@ lasso_train_mae, lasso_train_mse, lasso_train_r2 = evaluation(y_train, y_pred_tr
 cv_scores_lasso = cross_val_score(best_lasso, x_train, y_train, cv=10, scoring='r2', n_jobs=-1)
 lasso_data = ['Best_Lasso', lasso_train_mae,lasso_train_mse,lasso_train_r2,lasso_test_mae,lasso_test_mse,lasso_test_r2,cv_scores_lasso.mean()]
 Comparison_after.loc[8] = lasso_data
+Comparison_after = Comparison_after.sort_values(by = ['Test R2'],ascending=False)
+
+#Model Stacking
+stacking = {"Lasso":Lasso(),"Random Forest Regressor":RandomForestRegressor(),"AdaBoostRegressor":AdaBoostRegressor()}
+base_learners = [(name, model) for name, model in stacking.items()]
+meta_learner = LinearRegression()
+stacking_regressor = StackingRegressor(estimators=base_learners, final_estimator=meta_learner)
+cv_scores = cross_val_score(stacking_regressor, x_train, y_train, cv=10, scoring='r2')
+stacking_regressor.fit(x_train, y_train)
+st_y_train_pred = stacking_regressor.predict(x_train)
+st_y_test_pred = stacking_regressor.predict(x_test)
+st_test_mae, st_test_mse, st_test_r2 = evaluation(y_test, st_y_test_pred)
+st_train_mae, st_train_mse, st_train_r2 = evaluation(y_train, st_y_train_pred)
+cv_scores_st = cross_val_score(stacking_regressor, x_train, y_train, cv=10, scoring='r2', n_jobs=-1)
+lasso_data = ['Stacking Regressor', st_train_mae, st_train_mse, st_train_r2, st_test_mae, st_test_mse, st_test_r2, cv_scores_st.mean()]
+Comparison_after.loc[9] = lasso_data
 Comparison_after = Comparison_after.sort_values(by = ['Test R2'],ascending=False)
 
 #Results comparison
