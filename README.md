@@ -3,7 +3,7 @@
 >I am Ramon Ai, currently pursuing a master degree of business associates at National Chengchi university(NCCU) in Taiwan.
 >Out of my personal intersest and curiosity of Data science, I have taken couple related lessons, tyring to strengthen my overall analysis skills.
 >I've also completed several data analysis projects with Kaggle's datasets as practice.
->Therefore, I am using Github to document my progress and keep exploring the world of data. 
+>Therefore, I am using Github to document my progress and keep exploring the field of data. 
 ---
 Completed Projects✔️
 ---
