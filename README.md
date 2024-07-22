@@ -10,9 +10,10 @@ Completed Projects✔️
 1. [Restaurant's Revenue Prediction](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Revenue_Prediction.py)
 * Kaggle's Dataset
 * Data Processing
-  * Features selection 
+   *Observing correlation
   * Standarization
 * Model Training
+  * Features selection 
   * 7 different models(eg. Lasso, Random Forest, Xgboost)
   * Initial evaluation by cross validation, R2 and MSE
 * Model Tuning 
