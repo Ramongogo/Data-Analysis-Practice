@@ -8,8 +8,6 @@
 Completed Projects✔️
 ---
 1. Restaurant's Revenue Prediction
-
-    [Restaurant's Revenue Prediction_Code](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Revenue_Prediction_Code.py) / [Restaurant's Revenue Prediction_Reflection](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Revenue_Prediction_Reflection.md)
 * Kaggle's Dataset
 * Data Processing
   * Observing correlation
@@ -22,5 +20,10 @@ Completed Projects✔️
   * CV SearchGrid 
   * Optuna
 * Model Stacking
-* Strategy formulation for restaurants    
+* Strategy formulation for restaurants
+* Links : 
+
+  [Restaurant's Revenue Prediction_Code](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Revenue_Prediction_Code.py)
+
+  [Restaurant's Revenue Prediction_Reflection](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Revenue_Prediction_Reflection.md)
 2. Bankruptcy Prediction
