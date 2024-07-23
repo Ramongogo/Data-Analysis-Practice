@@ -25,6 +25,17 @@ Out of my personal interest of exploring delicious foods and decent restaurants,
  ![螢幕擷取畫面 2024-07-22 154128](https://github.com/user-attachments/assets/6c4ff04c-390f-48f4-9418-0b7df57cccf6)
 ## Strategy Formulation
 ---
-> Since these three features have linear realtionship with revenue and 'Number_of_Customers', 'Menu_Price', 'Marketing_Spend''s coeffiency with revenue are respectively 75.9053, 25.3290, and 28.1770.   
-> So I developed strategies based on these features to try increasing  revenue and calculated potential growth. 
+> Since these three features have linear realtionship with revenue and 'Number_of_Customers', 'Menu_Price', 'Marketing_Spend''s coefficient with revenue are respectively 75.9053, 25.3290, and 28.1770.
+> Also these three features has no collinarity.  
+> So I developed one strategy for each feature to try increasing revenue and calculated potential growth. 
 ---
+### 1. Number_of_Customers - Limit Dining Time
+Encourage customers to make reservations in advance to avoid long wait times and set a dining time limit, usually between 90 minutes to 2 hours to increase table turnover rate.
+### 2. Menu_Price - Pricing Stratification:
+Design a diversified menu with different priced set, offering both premium and budget options to cater to different customer segments to increase overall menu's average price.
+### 3. Marketing_Spend - Managing a Brand's Social Media Page
+Introduce restaurant products and brand story to ensure new customers can immediately understand restaurants's information and build a connection with existing customers.
+### Potential Growth 
+A rough estimate : Assuming that after implementing these strategies, the three features respectively increase by 10%, 5%, and 10%, it is estimated that revenue can increase by 11.67468%(10% * 75.9053 + 5% * 25.3290 + 10% * 28.1770).
+#### Areas For Improvement 
+If the data includes seating capacity, daily number of customers, the average menu prices for both stratified and non-stratified pricing, as well as the types of marketing strategies used, a more accurate estimate can be made.
