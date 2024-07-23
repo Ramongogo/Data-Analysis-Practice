@@ -39,4 +39,4 @@ Introduce restaurant products and brand story to ensure new customers can immedi
 ### Potential Growth 
 A rough estimate : Assuming that after implementing these strategies, the three features respectively increase by 10%, 5%, and 10%, it is estimated that revenue can increase by 11.67468%(10% * 75.9053 + 5% * 25.3290 + 10% * 28.1770).
 #### Areas For Improvement 
-If the data includes seating capacity, daily number of customers, the average menu prices for both stratified and non-stratified pricing, as well as the types of marketing strategies used, a more accurate estimate can be made.
+If the data includes seating capacity, daily number of customers, the average menu prices for both stratified and non-stratified pricing, as well as the types of marketing strategies used, a more accurate analysis and estimate can be made.
