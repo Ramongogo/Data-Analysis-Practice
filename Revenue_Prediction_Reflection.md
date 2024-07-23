@@ -26,6 +26,7 @@ Out of my personal interest of exploring delicious foods and decent restaurants,
 ## Strategy Formulation
 ---
 > Since these three features have linear realtionship with revenue and 'Number_of_Customers', 'Menu_Price', 'Marketing_Spend''s coefficient with revenue are respectively 75.9053, 25.3290, and 28.1770.
+> 
 > Also these three features has no collinarity.  
 > So I developed one strategy for each feature to try increasing revenue and calculated potential growth. 
 ---
