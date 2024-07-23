@@ -7,7 +7,7 @@
 ---
 Completed Projects✔️
 ---
-1. [Restaurant's Revenue Prediction](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Revenue_Prediction.py)
+1. [Restaurant's Revenue Prediction](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Revenue_Prediction_Code.py)
 * Kaggle's Dataset
 * Data Processing
   * Observing correlation
