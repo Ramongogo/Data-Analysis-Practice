@@ -10,8 +10,7 @@ Out of my personal interest of exploring delicious foods and decent restaurants,
 * Checking missing value
 * Using dummmy function to tranform the nominal data column "Cuisine_Type", then Observing correlation between each columns by heatmap
 * Removing outliers
-* Using heatmap to observe the features' correlation with revenue.
- ![Figure_1](https://github.com/user-attachments/assets/48695e69-5661-4903-a433-ea6668760bcb)
+* Using heatmap to observe the features' correlation with revenue.![Figure_1](https://github.com/user-attachments/assets/48695e69-5661-4903-a433-ea6668760bcb)
 ### 2. Model Training and Tuning 
 * Features Selection
   * The outcome of model trained with these three features has the highest R2 score.
