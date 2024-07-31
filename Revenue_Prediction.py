@@ -24,13 +24,14 @@ pd.set_option('display.max_columns',None)
 #Checking missing value
 print(df.isnull().sum())
 
-#Obseving correlation between each columns 
+#Observing correlation between each columns 
 dummies = pd.get_dummies(df['Cuisine_Type'] , drop_first=False).astype(int)
 df = pd.concat([df, dummies], axis=1)
 df = df.drop(['Cuisine_Type'], axis=1)
 matrix = df.corr()
 sns.heatmap(matrix, annot = True, cmap = 'coolwarm')
 plt.show()
+print(df['Menu_Price'].mean(),df['Menu_Price'].max(),df['Marketing_Spend'].mean(),df['Marketing_Spend'].max(),df['Number_of_Customers'].mean(),df['Number_of_Customers'].max())
 
 #Removing outliers
 for i in range(len(df.columns)):
@@ -113,10 +114,8 @@ for model_name, model in models.items():
         train_mae_tuned, train_mse_tuned, train_r2_tuned = evaluation(y_train, y_train_pred_tuned)
         test_mae_tuned, test_mse_tuned, test_r2_tuned = evaluation(y_test, y_test_pred_tuned)
         cv_scores_tuned = cross_val_score(best_model, x_train, y_train, cv=10, scoring='r2', n_jobs=-1)
-        results_after.append({'Model':model_name,'Train MAE':train_mae_tuned,
-                                "Train MSE":train_mse_tuned,"Train R2":train_r2_tuned,
-                                'Test MAE':test_mae_tuned,'Test MSE':test_mse_tuned,
-                                'Test R2':test_r2_tuned,'cv_scores':cv_scores_tuned.mean()})
+        results_after.append({'Model':model_name,'Test MAE':test_mae_tuned,'Test MSE':test_mse_tuned,
+                            'Test R2':test_r2_tuned,'cv_scores':cv_scores_tuned.mean()})
 Comparison_before= pd.DataFrame(results_before).sort_values(by = ['Test R2'],ascending=False) 
 Comparison_after = pd.DataFrame(results_after).sort_values(by = ['Test R2'],ascending=False)
 
@@ -135,7 +134,7 @@ y_pred_train_lasso = best_lasso.predict(x_train)
 lasso_test_mae, lasso_test_mse, lasso_test_r2 = evaluation(y_test, y_pred_lasso)
 lasso_train_mae, lasso_train_mse, lasso_train_r2 = evaluation(y_train, y_pred_train_lasso)
 cv_scores_lasso = cross_val_score(best_lasso, x_train, y_train, cv=10, scoring='r2', n_jobs=-1)
-lasso_data = ['Best_Lasso', lasso_train_mae,lasso_train_mse,lasso_train_r2,lasso_test_mae,lasso_test_mse,lasso_test_r2,cv_scores_lasso.mean()]
+lasso_data = ['Best_Lasso',lasso_test_mae,lasso_test_mse,lasso_test_r2,cv_scores_lasso.mean()]
 Comparison_after.loc[8] = lasso_data
 Comparison_after = Comparison_after.sort_values(by = ['Test R2'],ascending=False)
 
@@ -151,7 +150,7 @@ st_y_test_pred = stacking_regressor.predict(x_test)
 st_test_mae, st_test_mse, st_test_r2 = evaluation(y_test, st_y_test_pred)
 st_train_mae, st_train_mse, st_train_r2 = evaluation(y_train, st_y_train_pred)
 cv_scores_st = cross_val_score(stacking_regressor, x_train, y_train, cv=10, scoring='r2', n_jobs=-1)
-st_data = ['Stacking Regressor', st_train_mae, st_train_mse, st_train_r2, st_test_mae, st_test_mse, st_test_r2, cv_scores_st.mean()]
+st_data = ['Stacking Regressor', st_test_mae, st_test_mse, st_test_r2, cv_scores_st.mean()]
 Comparison_after.loc[9] = st_data
 Comparison_after = Comparison_after.sort_values(by = ['Test R2'],ascending=False)
 
@@ -166,3 +165,4 @@ print(f'Lasso optuna result : Intercept = {best_lasso.intercept_}, Coef : {best_
 
 
 
+# %%
