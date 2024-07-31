@@ -7,16 +7,21 @@
 ---
 Completed Projects✔️
 ---
-1. [Restaurant's Revenue Prediction](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Revenue_Prediction.py)
-* Data Preprocessing
-  * Features selection 
+1. Restaurant's Revenue Prediction
+* Data Processing
+  * Observing correlation
   * Standarization
-* Model Training
+* Model Training and Evaluation
+  * Features selection 
   * 7 different models(eg. Lasso, Random Forest, Xgboost)
-  * Initial evaluation by cross validation, R2 and MSE
 * Model Tuning 
   * CV SearchGrid 
   * Optuna
 * Model Stacking
-* Strategy formulation for restaurants    
-2. Bankruptcy Prediction
+* Strategy Formulation for Restaurants
+* Links : 
+
+  [Restaurant's Revenue Prediction_Code](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Revenue_Prediction_Code.py)
+
+  [Restaurant's Revenue Prediction_Reflection](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Revenue_Prediction_Reflection.md)
+
