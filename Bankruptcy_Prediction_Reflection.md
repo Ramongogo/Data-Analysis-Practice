@@ -13,7 +13,7 @@
 
 * Feature extraction - Using PCA (Explained Variance = 95%) to reduce selected features' dimensionality and eliminate collinearity
 
-  ![螢幕擷取畫面 2024-08-01 190701](https://github.com/user-attachments/assets/3dcdb224-d307-4b24-8812-6aa9902ce21f)
+  
 
   Reducing from 32 features to 13 new features. 
 ### 3. Handling Imbalanced Dataset
@@ -23,9 +23,9 @@
 * Using SMOTE to randomly create samples of bankruptcy until they are as many as non-bankruptcy's samples
   ![asjusted banruptcy ratio](https://github.com/user-attachments/assets/2d7ecb26-f25e-4c77-999a-e0b18f0cc520)
 ### 4. Model Training
-* Using lazypredict package to automatically run more than 15 models, then selecting the best performing model - ExtraTreeClassifer with accuracy score of 0.9769. 
-  ![lazy result](https://github.com/user-attachments/assets/042e98df-ebca-4b6f-af8b-8e2bf943d803)
-
+* Using lazypredict package to automatically run more than 15 models, then selecting the best performing model - ExtraTreeClassifer with accuracy score of 0.9769.
+  
+  ![螢幕擷取畫面 2024-08-01 230623](https://github.com/user-attachments/assets/c3ac0557-eadb-497e-8a0a-81f19fd99ade)
 
 ### 4. Comparison
 * The result turned out that Lasso without tuning ranks first, Lasso after tuning ranks second and Linear Regression ranks third. Thus, the features have an obvious linear relationship with revenue. Besides, tuning and stacking aren't effective in this case. 
