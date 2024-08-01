@@ -1,3 +1,4 @@
+# Cleaning data
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -10,6 +11,8 @@ pd.set_option('display.max_rows', None)
 print(df.duplicated().sum())
 print(df.isnull().sum().sum())
 
+# Observing correlation between features 
+# Selecting absolute value of features' correlation higher than 0.1
 matrix = df.corr()
 target = 'Bankrupt?'
 matrix_bankrupt = matrix[target].sort_values(ascending = False)
@@ -27,6 +30,7 @@ for i, v in enumerate(selected_features) :
     plt.text(i, v, f'{v:.2f}', ha='center', va='bottom' if v > 0 else 'top')
 plt.show()
 
+# extracting Features by PCA to eliminate collinearity
 from sklearn.decomposition import KernelPCA
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
@@ -40,6 +44,7 @@ pca = PCA(n_components = 0.95)
 x_pca = pca.fit_transform(x_scaled)
 print(pca.explained_variance_ratio_)
 
+# Using SMOTE to deal with  imbalanced dataset
 from imblearn.over_sampling import SMOTE
 sns.countplot(x = y, palette = 'Set2')
 plt.show()
@@ -47,6 +52,7 @@ x_smote, y_smote = SMOTE(random_state = 88).fit_resample(x_pca, y)
 sns.countplot(x = y_smote, palette = 'Set2')
 plt.show()
 
+# Using lazypredict to see which models have better performance 
 from sklearn.model_selection import train_test_split
 from lazypredict.Supervised import LazyClassifier
 x_train, x_test, y_train, y_test = train_test_split(x_smote, y_smote, test_size = 0.2, random_state= 88)
@@ -55,7 +61,34 @@ models, predictions = clf.fit(x_train, x_test, y_train, y_test)
 pd.set_option('display.float_format', lambda x: f'{x:.4f}')
 print(models)
 
+# Using Optuna to hypertune the best performing model - ExtraTreeClassifier
+import optuna
+def objective(trial):
+    etc2 = ExtraTreesClassifier(
+    n_estimators=trial.suggest_int('n_estimators', 50, 300),
+    max_depth=trial.suggest_int('max_depth', 5, 50),
+    min_samples_split=trial.suggest_int('min_samples_split', 2, 20),
+    min_samples_leaf=trial.suggest_int('min_samples_leaf', 1, 20),
+    random_state=88)
+    cv_scores_best = cross_val_score(etc2, x_train, y_train, cv = 10, scoring = 'accuracy')
+    return np.mean(cv_scores_best)
+study = optuna.create_study(direction = 'maximize')
+study.optimize(objective, n_trials = 50)
+best_params = study.best_trial.params
+best_etc = ExtraTreesClassifier(**best_params)
+best_etc.fit(x_train, y_train)
+best_etc_pred = best_etc.predict(x_test)
+cm3 = confusion_matrix(y_test, best_etc_pred)
+print(classification_report(y_test, best_etc_pred, digits = 4))
+cv_scores_best_etc = cross_val_score(best_etc, x_train, y_train, cv =10, scoring = 'accuracy', n_jobs = -1)
+print(cv_scores_best_etc.mean())
+sns.heatmap(cm3, annot = True, fmt ='d', cmap = 'Oranges')
+plt.title('Best Extra Tree Confusion Matrix')
+plt.ylabel('True Label')
+plt.xlabel('Predicted Label')
+plt.show()
 
+# Forming a voting model composed of top five performing model
 from sklearn.ensemble import VotingClassifier,StackingClassifier, ExtraTreesClassifier, RandomForestClassifier, BaggingClassifier
 from xgboost import XGBClassifier
 from lightgbm import LGBMClassifier
@@ -83,6 +116,7 @@ plt.ylabel('True Label')
 plt.xlabel('Predicted Label')
 plt.show()
 
+# Forming a stacking model composed of top five performing model
 meta_clf = LogisticRegression(random_state = 88)
 stack_clf = StackingClassifier(
     estimators = [('ExtraTrees', etc), ('RandomForest', rf), ('XGB', xgb), ('Bagging', bag), ('LGBM', lgbm)],
@@ -99,31 +133,3 @@ plt.title('Stacking Model Confusion Matrix')
 plt.ylabel('True Label')
 plt.xlabel('Predicted Label')
 plt.show()
-
-import optuna
-def objective(trial):
-    etc2 = ExtraTreesClassifier(
-    n_estimators=trial.suggest_int('n_estimators', 50, 300),
-    max_depth=trial.suggest_int('max_depth', 5, 50),
-    min_samples_split=trial.suggest_int('min_samples_split', 2, 20),
-    min_samples_leaf=trial.suggest_int('min_samples_leaf', 1, 20),
-    random_state=88)
-    cv_scores_best = cross_val_score(etc2, x_train, y_train, cv = 10, scoring = 'accuracy')
-    return np.mean(cv_scores_best)
-study = optuna.create_study(direction = 'maximize')
-study.optimize(objective, n_trials = 50)
-best_params = study.best_trial.params
-best_etc = ExtraTreesClassifier(**best_params)
-best_etc.fit(x_train, y_train)
-best_etc_pred = best_etc.predict(x_test)
-cm3 = confusion_matrix(y_test, best_etc_pred)
-print(classification_report(y_test, best_etc_pred, digits = 4))
-cv_scores_best_etc = cross_val_score(best_etc, x_train, y_train, cv =10, scoring = 'accuracy', n_jobs = -1)
-print(cv_scores_best_etc.mean())
-sns.heatmap(cm3, annot = True, fmt ='d', cmap = 'Oranges')
-plt.title('Best Extra Tree Confusion Matrix')
-plt.ylabel('True Label')
-plt.xlabel('Predicted Label')
-plt.show()
-
-# %%
