@@ -161,8 +161,3 @@ print('After tuning')
 print(Comparison_after)
 print('-'*40)
 print(f'Lasso optuna result : Intercept = {best_lasso.intercept_}, Coef : {best_lasso.coef_}')
-
-
-
-
-
