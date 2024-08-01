@@ -42,7 +42,17 @@ x_scaled = scaler.fit_transform(x)
 pca = PCA(n_components = 0.95)
 #x_kpca = kpca.fit_transform(x_scaled)
 x_pca = pca.fit_transform(x_scaled)
-print(pca.explained_variance_ratio_)
+pca_ratio = pca.explained_variance_ratio_.tolist()
+pca_name = [f'PCA{i + 1}'for i in range(len(pca_ratio))] 
+print(pca_ratio)
+sns.barplot(x = pca_name,y = pca_ratio, palette = 'Set2')
+plt.title('New Features Correlation')
+plt.xlabel('PCA Features')
+plt.ylabel('Correlation')
+for i ,v in enumerate(pca_ratio):
+    plt.text(i, v, f'{v:.2f}', ha = 'center', va = 'top')
+plt.show()
+
 
 # Using SMOTE to deal with  imbalanced dataset
 from imblearn.over_sampling import SMOTE
@@ -62,7 +72,10 @@ pd.set_option('display.float_format', lambda x: f'{x:.4f}')
 print(models)
 
 # Using Optuna to hypertune the best performing model - ExtraTreeClassifier
+from sklearn.ensemble import ExtraTreesClassifier
+from sklearn.model_selection import cross_val_score
 import optuna
+from sklearn.metrics import classification_report, confusion_matrix
 def objective(trial):
     etc2 = ExtraTreesClassifier(
     n_estimators=trial.suggest_int('n_estimators', 50, 300),
@@ -92,9 +105,7 @@ plt.show()
 from sklearn.ensemble import VotingClassifier,StackingClassifier, ExtraTreesClassifier, RandomForestClassifier, BaggingClassifier
 from xgboost import XGBClassifier
 from lightgbm import LGBMClassifier
-from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import cross_val_score
 etc = ExtraTreesClassifier(random_state = 88)
 rf = RandomForestClassifier(random_state = 88)
 xgb = XGBClassifier(random_state = 88)
