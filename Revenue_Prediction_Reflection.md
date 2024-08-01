@@ -1,6 +1,6 @@
 # Results 
 ---
-> **The final Lasso model has an acurracy of 0.672868 with three features selected which are 'Number_of_Customers', 'Menu_Price', and 'Marketing_Spend'.**
+> **The final Lasso model has an acurracy of 0.672868 with three features selected which are 'Number_of_Customers', 'Menu_Price', and 'Marketing_Spend' .**
 ---
 ## Motive
 Out of my personal interest of exploring delicious foods and decent restaurants, I wondered what kind of features would influence a restaurant's business. Then I found this dataset on Kaggle which has enough samples and features, so I tried doing the analysis by machine learning models. 
@@ -11,7 +11,7 @@ Out of my personal interest of exploring delicious foods and decent restaurants,
 * Using dummmy function to tranform the nominal data column "Cuisine_Type", then Observing correlation between each columns by heatmap
 * Removing outliers
 * Using heatmap to observe the features' correlation with revenue.
-![螢幕擷取畫面 2024-07-26 112607](https://github.com/user-attachments/assets/fc3a21fc-e818-415b-8156-c52b0c2f5103)
+  ![螢幕擷取畫面 2024-07-26 112607](https://github.com/user-attachments/assets/fc3a21fc-e818-415b-8156-c52b0c2f5103)
 ### 2. Model Training and Tuning 
 * Features Selection
   * The outcome of model trained with these three features has the highest R2 score.
@@ -24,7 +24,7 @@ Out of my personal interest of exploring delicious foods and decent restaurants,
 ### 4. Comparison
 * The result turned out that Lasso without tuning ranks first, Lasso after tuning ranks second and Linear Regression ranks third. Thus, the features have an obvious linear relationship with revenue. Besides, tuning and stacking aren't effective in this case. 
   
- ![螢幕擷取畫面 2024-07-22 154128](https://github.com/user-attachments/assets/6c4ff04c-390f-48f4-9418-0b7df57cccf6)
+  ![螢幕擷取畫面 2024-08-01 231033](https://github.com/user-attachments/assets/eaaf9af7-fa47-47f4-9946-2627f06c29f1)
 ## Strategy Formulation
 ---
 > Since these three features have linear realtionship with revenue and 'Number_of_Customers', 'Menu_Price', 'Marketing_Spend''s coefficient with revenue are respectively 75.9053, 25.3290, and 28.1770.
