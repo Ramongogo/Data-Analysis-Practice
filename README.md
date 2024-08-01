@@ -40,5 +40,5 @@
 
   [Bankruptcy Prediction Code](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Bankruptcy_Prediction_Code.py)
 
-  [Bankruptcy Prediction Reflection]
+  [Bankruptcy Prediction Reflection](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Bankruptcy_Prediction_Reflection.md)
     
