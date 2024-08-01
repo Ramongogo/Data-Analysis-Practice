@@ -52,7 +52,7 @@
 * Forming a stacking model composed of top five performing model
   
   ![螢幕擷取畫面 2024-08-02 022331](https://github.com/user-attachments/assets/eeea6108-2cce-47ef-8e99-07ccebf2f971)
-*  Performance of stacking model with accuracy score of 0.9833 is slightly better than ExtraTreeClassifier
+* Performance of stacking model with accuracy score of 0.9833 is slightly better than ExtraTreeClassifier
   #### Stacking Model's Confusion Matrix
   ![stack result](https://github.com/user-attachments/assets/446d808f-c089-4a12-9877-33a1a1fe3ace)
 
