@@ -122,11 +122,11 @@ Comparison_after = pd.DataFrame(results_after).sort_values(by = ['Test R2'],asce
 #Optuna tuning for the best model
 def objective(trial):
     model = Lasso(alpha = trial.suggest_loguniform('alpha', 0.001, 100))
-    score = cross_val_score(model, x_train, y_train, cv=10, scoring='neg_mean_squared_error')
+    score = cross_val_score(model, x_train, y_train, cv=10, scoring='r2')
     return np.mean(score)
 study = optuna.create_study(direction = 'maximize')
 study.optimize(objective, n_trials = 100)
-best_params = study.best_params
+best_params = study.best_trial.params
 best_lasso = Lasso(**best_params)
 best_lasso.fit(x_train, y_train)
 y_pred_lasso = best_lasso.predict(x_test)
@@ -165,4 +165,4 @@ print(f'Lasso optuna result : Intercept = {best_lasso.intercept_}, Coef : {best_
 
 
 
-# %%
+
