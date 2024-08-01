@@ -1,6 +1,6 @@
 # Results 
 ---
-> **The final selected stacking model composed of ExtraTreesClassifier, RandomForestClassifier, BaggingClassifier XGBClassifier and LGBMClassifier has an acurracy of 0.9833.**
+> **The final Lasso model has an acurracy of 0.672868 with three features selected which are 'Number_of_Customers', 'Menu_Price', and 'Marketing_Spend' .**
 ---
 ## Motive
 Out of my personal interest of exploring delicious foods and decent restaurants, I wondered what kind of features would influence a restaurant's business. Then I found this dataset on Kaggle which has enough samples and features, so I tried doing the analysis by machine learning models. 
