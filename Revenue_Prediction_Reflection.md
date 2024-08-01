@@ -24,7 +24,7 @@ Out of my personal interest of exploring delicious foods and decent restaurants,
 ### 4. Comparison
 * The result turned out that Lasso without tuning ranks first, Lasso after tuning ranks second and Linear Regression ranks third. Thus, the features have an obvious linear relationship with revenue. Besides, tuning and stacking aren't effective in this case. 
   
-  ![螢幕擷取畫面 2024-07-22 154128](https://github.com/user-attachments/assets/6c4ff04c-390f-48f4-9418-0b7df57cccf6)
+  ![螢幕擷取畫面 2024-08-01 225753](https://github.com/user-attachments/assets/73a188b4-38a8-4fce-b1fc-580d065084f7)
 ## Strategy Formulation
 ---
 > Since these three features have linear realtionship with revenue and 'Number_of_Customers', 'Menu_Price', 'Marketing_Spend''s coefficient with revenue are respectively 75.9053, 25.3290, and 28.1770.
