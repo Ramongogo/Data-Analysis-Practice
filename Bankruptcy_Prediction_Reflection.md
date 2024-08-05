@@ -1,4 +1,4 @@
-# Results 
+## Results 
 ---
 > **The final selected stacking model composed of ExtraTreesClassifier, RandomForestClassifier, BaggingClassifier XGBClassifier and LGBMClassifier has an acurracy of 0.9833.**
 ---
@@ -14,9 +14,7 @@
 
 * Feature extraction 
   * Using PCA (Explained Variance = 95%) to reduce selected features' dimensionality and eliminate collinearity
-  
-  ![new featurs](https://github.com/user-attachments/assets/1a1b066f-bf5e-45b5-ae6e-9dc96f284c5f)
-
+    ![new featurs](https://github.com/user-attachments/assets/56e013c4-8795-42d9-b0ca-bd05f4978567)
   * Reducing from 32 features to 13 new features. 
 ### 3. Handling Imbalanced Dataset
 * There is a huge difference between bankruptcy and non-bankruptcy, which is a inbalanced dataset
