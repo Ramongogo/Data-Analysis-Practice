@@ -7,7 +7,7 @@
 ---
 ## Completed Projects✔️
 ---
-## 1. Restaurant's Revenue Prediction
+## 1. Restaurant's Revenue Prediction 🍔
 * Data Processing
   * Observing correlation
   * Standarization
@@ -25,7 +25,7 @@
 
   [Restaurant's Revenue Prediction_Reflection](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Revenue_Prediction_Reflection.md)
 
-## 2. Bankruptcy Prediction
+## 2. Bankruptcy Prediction 📉
 * Model Training 
   * Features selection and extraction(PCA)
   * lazypredict(15+ models)
