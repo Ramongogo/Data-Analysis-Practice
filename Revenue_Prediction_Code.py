@@ -16,24 +16,19 @@ from catboost import CatBoostRegressor
 from xgboost import XGBRegressor
 from sklearn.preprocessing import LabelEncoder
 import optuna
+import scipy.stats as stats
 
 data = pd.read_csv("C:/Users/USER/Downloads/data/Restaurant_revenue (1).csv", encoding = 'utf8')
 df = pd.DataFrame(data)
 pd.set_option('display.max_columns',None)
-
+print(df.head())
 #Checking missing value
 print(df.isnull().sum())
 
-#Observing correlation between each columns 
+#Removing outliers
 dummies = pd.get_dummies(df['Cuisine_Type'] , drop_first=False).astype(int)
 df = pd.concat([df, dummies], axis=1)
 df = df.drop(['Cuisine_Type'], axis=1)
-matrix = df.corr()
-sns.heatmap(matrix, annot = True, cmap = 'coolwarm')
-plt.show()
-print(df['Menu_Price'].mean(),df['Menu_Price'].max(),df['Marketing_Spend'].mean(),df['Marketing_Spend'].max(),df['Number_of_Customers'].mean(),df['Number_of_Customers'].max())
-
-#Removing outliers
 for i in range(len(df.columns)):
     Q1 = np.percentile(df.iloc[:,i], 25, method = 'midpoint')
     Q3 = np.percentile(df.iloc[:,i], 75, method = 'midpoint')
@@ -42,6 +37,19 @@ for i in range(len(df.columns)):
     upper = Q3 + 1.5*IQR
     outliers = (df.iloc[:,i] > upper) | (df.iloc[:,i] < lower)
 df = df[~outliers]
+
+#Observing correlation between each columns 
+matrix = df.corr()
+sns.heatmap(matrix, annot = True, cmap = 'coolwarm')
+plt.show()
+print(df['Menu_Price'].mean(),df['Menu_Price'].max(),df['Marketing_Spend'].mean(),df['Marketing_Spend'].max(),df['Number_of_Customers'].mean(),df['Number_of_Customers'].max())
+contingency_table = pd.crosstab(df['American'], df['Monthly_Revenue'])
+chi2, p, dof, expected = stats.chi2_contingency(contingency_table)
+print(f"Chi2: {chi2}")
+print(f"P-value: {p}")
+print(f"Degrees of Freedom: {dof}")
+print(f"Expected Frequencies: \n{expected}")
+
 
 #Model Training
 x = df[['Number_of_Customers','Menu_Price','Marketing_Spend']]
