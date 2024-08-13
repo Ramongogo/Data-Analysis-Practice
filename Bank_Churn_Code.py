@@ -34,14 +34,15 @@ card_map = {'Blue': 0,'Gold': 1,'Silver': 2,'Platinum': 3}
 df['Education_Level'] = df['Education_Level'].map(education_map)
 df['Income_Category'] = df['Income_Category'].map(income_map)
 df['Card_Category'] = df['Card_Category'].map(card_map)
-# Observing correlation between features 
-# Selecting features' absolute value of correlation with revenue higher than 0.1
+ 
+# Filtering the data in terms of inactive months more than 2
 df_filtered = df[df['Months_Inactive_12_mon']>2]
 df_filtered['DV'] = ((df_filtered['Months_Inactive_12_mon'] >=5) & (df['Attrition_Flag'] == 0)).astype(int)
 print(df_filtered.info())
 print(df_filtered.head())
 print(df_filtered['DV'].value_counts())
 
+# Selecting features' absolute value of correlation with revenue higher than 0.08
 import seaborn as sns
 matrix = df_filtered.corr()
 sns.heatmap(matrix, annot=True, cmap='Blues',fmt='.3f')
@@ -60,6 +61,7 @@ for i, v in enumerate(selected_features) :
     plt.text(i, v, f'{v:.2f}', ha='center', va='bottom' if v > 0 else 'top')
 plt.show()
 
+# Extracting Features by PCA to eliminate collinearity
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 selected_columns = list(selected_features.index)
@@ -81,14 +83,15 @@ for i ,v in enumerate(pca_ratio):
     plt.text(i, v, f'{v:.2f}', ha = 'center', va = 'top')
 plt.show()
 
-# Using SMOTE to deal with  imbalanced dataset
+# Using SMOTE to handle imbalanced dataset
 from imblearn.over_sampling import SMOTE
-#sns.countplot(x = y, palette = 'Set2')
-#plt.show()
+sns.countplot(x = y, palette = 'Set2')
+plt.show()
 x_smote, y_smote = SMOTE(random_state = 88).fit_resample(x_pca, y)
 sns.countplot(x = y_smote, palette = 'Set2')
 plt.show()
 
+# Using lazypredict to see which models have better performance 
 from sklearn.model_selection import train_test_split
 from lazypredict.Supervised import LazyClassifier
 from sklearn.metrics import classification_report, confusion_matrix
@@ -99,6 +102,9 @@ clf = LazyClassifier(verbose = 1, predictions = True)
 models, predictions = clf.fit(x_train, x_test, y_train, y_test)
 pd.set_option('display.float_format', lambda x: f'{x:.4f}')
 print(models)
+
+# Using Optuna to hypertune the best performing model - ExtraTreeClassifier
+## Before tuning 
 etc = ExtraTreesClassifier(random_state=88)
 etc.fit(x_train, y_train)
 y_pred = etc.predict(x_test)
@@ -110,7 +116,7 @@ plt.title('Best Extra Tree Confusion Matrix')
 plt.ylabel('True Label')
 plt.xlabel('Predicted Label')
 plt.show()
-
+## After tuning 
 import optuna
 def objetive(trial):
     etc2 = ExtraTreesClassifier(
@@ -137,6 +143,7 @@ plt.ylabel('True Label')
 plt.xlabel('Predicted Label')
 plt.show()
 
+# Forming a stacking model composed of top four performing model
 from sklearn.ensemble import StackingClassifier, ExtraTreesClassifier, RandomForestClassifier
 from xgboost import XGBClassifier
 from lightgbm import LGBMClassifier
