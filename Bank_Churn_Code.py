@@ -87,7 +87,7 @@ plt.show()
 from imblearn.over_sampling import SMOTE
 sns.countplot(x = y, palette = 'Set2')
 plt.show()
-x_smote, y_smote = SMOTE(random_state = 88).fit_resample(x_pca, y)
+x_smote, y_smote = SMOTE(sampling_strategy = 0.25,random_state = 88).fit_resample(x_pca, y)
 sns.countplot(x = y_smote, palette = 'Set2')
 plt.show()
 
