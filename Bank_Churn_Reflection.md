@@ -1,14 +1,15 @@
 ## Results 
 ---
-> **The final selected stacking model composed of ExtraTreesClassifier, RandomForestClassifier, XGBClassifier and LGBMClassifier has an acurracy of 0.9837, capturing 19% customers who are likely to terminate the bank's credit card contract dut to prolonged inactivity ,and estimating to save 93% management cost of those inactive credit cards.**
+> **The final selected stacking model composed of ExtraTreesClassifier, RandomForestClassifier, XGBClassifier and LGBMClassifier has an acurracy of 0.9837, capturing 19% customers who are likely to terminate the bank's credit card contract due to prolonged inactivity ,and estimating to save management cost of 93% those inactive credit cards.**
 ---
 ## Motive 
 With an active card rate of only 63.8% for credit cards across Taiwan, the high number of inactive cards may result in a significant management cost. Data indicates that on average, a bank in Taiwan spends billions on inactive cards. Additionally, there is a potential risk of fraud and unauthorized transactions. Therefore, based on the available dataset on Kaggle, I design a model that can identify customers who stopped using their cards due to prolonged inactivity.
 ## Process Elaboration
 ### 1. Data Processing
-* Importing data and required packages
+* Importing data 
 * Checking missing value
 * Using heatmap to observe the features' correlation with bankruptcy
+  ![revenue matrix](https://github.com/user-attachments/assets/3676ca8d-b765-4ebf-86be-b43631bb7ef1)
 ### 2. Feature Engineering
 * Feature selection 
   * Selcting absolute value of features' correlation higher than 0.1
