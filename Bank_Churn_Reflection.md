@@ -1,6 +1,6 @@
 ## Results 
 ---
->**The final selected stacking model composed of ExtraTreesClassifier, RandomForestClassifier, XGBClassifier and LGBMClassifier has an acurracy of 0.9837, capturing 19% customers who are likely to terminate the bank's credit card contract due to prolonged inactivity ,and estimating to save management cost of 93% those inactive credit cards.**
+>**The final selected stacking model composed of ExtraTreesClassifier, RandomForestClassifier, XGBClassifier and LGBMClassifier has an acurracy of 0.9837, capturing 93% customers whose credit card is inactive for two months are likely to terminate the bank's credit card contract due to prolonged inactivity ,and estimating not only to save 50% management cost of inactive credit cards but also reduce capital requirement.**
 ---
 ## Motive 
 ---
@@ -53,7 +53,7 @@
 * The model's mean score of 10 times cross validation is 0.9805, which is also slightly better than ExtraTreeClassifier after tuning.
 ## Estimated Benefits 
 ---
->**1**
+>**According to The final selected stocking model, **
 ---
 ## References 
   https://udn.com/news/story/7239/7555914
