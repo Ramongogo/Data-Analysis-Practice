@@ -1,6 +1,6 @@
 ## Results 
 ---
->**The final selected stacking model composed of ExtraTreesClassifier, RandomForestClassifier, XGBClassifier and LGBMClassifier has an acurracy of 0.9837, capturing 93% customers whose credit card is inactive for two months are likely to terminate the bank's credit card contract due to prolonged inactivity ,and estimating not only to save 50% management cost of inactive credit cards but also reduce capital requirement.**
+>**The final selected stacking model composed of ExtraTreesClassifier, RandomForestClassifier, XGBClassifier and LGBMClassifier has an acurracy of 0.9837, capturing 93% of customers whose credit cards have been inactive for two months and are likely to terminate the bank's credit card contract due to prolonged inactivity ,and estimating not only to save 55% of management cost of inactive credit cards but also reduce capital requirement.**
 ---
 ## Motive 
 ---
@@ -53,7 +53,7 @@
 * The model's mean score of 10 times cross validation is 0.9805, which is also slightly better than ExtraTreeClassifier after tuning.
 ## Estimated Benefits 
 ---
->**According to The final selected stocking model, **
+>**The final selected stocking model has accuracy score of 0.9862 and 10 times cross validations' mean score of 0.9805, which means the model is quite accurate and robust. According to its confusion matrix, we can assume that the model can accurately capture and predict  93% of customers whose cards have been inactive for two months and are likely to terminate the bank's credit card contract due to prolonged inactivity.(152/152+5+6=93%). Besides, the model is estimated to be able to also save the 55% of management cost of those inactive cards because it predicts the situation five to six months in advance at the two-month mark, allowing the costs for the three months in between to be eliminated. As a result, capital requirement can also be reduced."**
 ---
 ## References 
   https://udn.com/news/story/7239/7555914
