@@ -53,4 +53,5 @@
 * Performance of stacking model with accuracy score of 0.9833 is slightly better than ExtraTreeClassifier
   #### Stacking Model's Confusion Matrix
   ![stack result](https://github.com/user-attachments/assets/446d808f-c089-4a12-9877-33a1a1fe3ace)
-
+### References
+https://www.kaggle.com/code/swarnabh31/bankruptcy-predictior-accuracy-90/notebook
