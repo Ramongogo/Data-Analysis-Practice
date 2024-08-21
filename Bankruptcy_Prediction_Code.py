@@ -17,7 +17,7 @@ matrix = df.corr()
 target = 'Bankrupt?'
 matrix_bankrupt = matrix[target].sort_values(ascending = False)
 matrix_bankrupt = matrix_bankrupt.drop(target)
-selected_features = matrix_bankrupt[(matrix_bankrupt >= 0.1) & (matrix_bankrupt <= -0.1)]  
+selected_features = matrix_bankrupt[(matrix_bankrupt >= 0.1) | (matrix_bankrupt <= -0.1)]  
 print(selected_features)
 sns.barplot(x = selected_features.index, y = selected_features.values, palette = 'Set2')
 plt.title('Correlation with Bankruptcy')
