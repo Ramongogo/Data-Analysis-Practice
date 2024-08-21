@@ -5,40 +5,22 @@
 >I've also completed several data analysis projects with Kaggle's datasets as practice.
 >Therefore, I am using Github to document my progress and keep exploring the field of data. 
 ---
-## Completed Projects✔️
+## Completed Projects🎉
 ---
-## 1. Restaurant's Revenue Prediction 🍔
-* Data Processing
-  * Observing correlation
-  * Standarization
-* Model Training and Evaluation
-  * Features selection 
-  * 7 different models(eg. Lasso, Random Forest, Xgboost)
-* Model Tuning 
-  * CV SearchGrid 
-  * Optuna
-* Model Stacking
-* Strategy Formulation for Restaurants
-* Links : 
+## 1. Credit Card Customers' Churn 💳
 
-  [Restaurant's Revenue Prediction_Code](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Revenue_Prediction_Code.py)
-
-  [Restaurant's Revenue Prediction_Reflection](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Revenue_Prediction_Reflection.md)
-
+  [Credit Card Customers' Churn_Code](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Bank_Churn_Code.py)
+  
+  [Credit Card Customers' Churn_Reflection](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Bank_Churn_Reflection.md)
+  
 ## 2. Bankruptcy Prediction 📉
-* Model Training 
-  * Features selection and extraction(PCA)
-  * lazypredict(15+ models)
-* Model Tuning
-  * Optuna
-* Model Stacking
-* Model Voting
-* Evaluation
-  * Classification Report
-  * Confusion Matrix
-* Links :
 
   [Bankruptcy Prediction Code](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Bankruptcy_Prediction_Code.py)
 
   [Bankruptcy Prediction Reflection](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Bankruptcy_Prediction_Reflection.md)
     
+## 3. Restaurant's Revenue Prediction 🍔 
+
+  [Restaurant's Revenue Prediction_Code](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Revenue_Prediction_Code.py)
+
+  [Restaurant's Revenue Prediction_Reflection](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Revenue_Prediction_Reflection.md)
