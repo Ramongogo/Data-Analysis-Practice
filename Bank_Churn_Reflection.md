@@ -23,7 +23,7 @@
   * Using PCA (Explained Variance = 95%) to reduce selected features' dimensionality and eliminate collinearity
   ![project 2](https://github.com/user-attachments/assets/3c30ba79-78f6-47fa-8914-3d7f195a7aee)
 ### 3. Handling Imbalanced Dataset
-* There is a huge difference between the variable, which is a inbalanced dataset
+* There is a huge difference between the variable's values, which is a inbalanced dataset
   ![project 3](https://github.com/user-attachments/assets/f6134167-a26e-409b-b564-6f630cbadd76)
 
 * Using SMOTE to randomly create samples (25% of value zero )
