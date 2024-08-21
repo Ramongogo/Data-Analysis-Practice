@@ -9,17 +9,23 @@
 ---
 ## 1. Credit Card Customers' Churn 💳
 
-  [Credit Card Customers' Churn_Code](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Bank_Churn_Code.py)
+  [Credit Card Customers' Churn Code](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Bank_Churn_Code.py)
   
-  [Credit Card Customers' Churn_Reflection](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Bank_Churn_Reflection.md)
+  [Credit Card Customers' Churn Reflection](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Bank_Churn_Reflection.md)
   
-## 2. Bankruptcy Prediction 📉
+## 2. Bank's Loan Default Prediction 💸
+
+  [Bank's Loan Default Prediction Code](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Default_Prediction_Code.py)
+
+  [Bank's Loan Default Prediction Reflection](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Default_Prediction_Reflection.md)
+
+## 3. Bankruptcy Prediction 📉
 
   [Bankruptcy Prediction Code](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Bankruptcy_Prediction_Code.py)
 
   [Bankruptcy Prediction Reflection](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Bankruptcy_Prediction_Reflection.md)
     
-## 3. Restaurant's Revenue Prediction 🍔 
+## 4. Restaurant's Revenue Prediction 🍔 
 
   [Restaurant's Revenue Prediction_Code](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Revenue_Prediction_Code.py)
 
