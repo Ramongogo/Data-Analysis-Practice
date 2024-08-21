@@ -1,6 +1,6 @@
 ## Results 
 ---
->**The final selected stacking model composed of ExtraTreesClassifier, RandomForestClassifier, XGBClassifier and LGBMClassifier has a weighted average f1 score of 0.9862, capturing 96.5% of customers whose credit cards have been inactive for two months and are likely to terminate the bank's credit card contract due to prolonged inactivity ,and estimating not only to save 55% of management cost of inactive credit cards but also reduce capital requirement.**
+>**The final selected stacking model composed of LogisticRegression, SVC, XGBClassifier and GaussianNB has a f1 score of 0.623 and a weighted average f1 score of 0.8175, capturing 45.3% of customers who might be potential defaulters,and estimating to save the amount of same percentage of loan default.**
 ---
 ## Motive 
 ---
@@ -45,11 +45,12 @@
 
   #### Stacking Model's Confusion Matrix
   ![Figure_11](https://github.com/user-attachments/assets/45663959-ce92-4b86-9562-2661609cbacf)
-## Estimated Benefits 
+## Reflection 
 ---
->**The final selected stocking model has a weighted average f1 score of 0.9862 and 10 times cross validations' mean score of 0.9805, which means the model is quite accurate and robust. According to its confusion matrix, we can assume that the model can accurately capture and predict  96.5% of customers whose cards have been inactive for two months and are likely to terminate the bank's credit card contract due to prolonged inactivity based on type-1's f1 score. Besides, the model is estimated to be able to also save the 55% of management cost of those inactive cards because it predicts the situation five to six months in advance at the two-month mark, allowing the costs for the three months in between to be eliminated. As a result, capital requirement can also be reduced."**
+>**The final selected stocking model has a f1 score of 0.624 and a weighted average f1 score of 0.8175. According to its confusion matrix, we can assume that the model can accurately capture and predict 45.3% of customers who probably become defaulters(3264/3264+3401+534). The model is also estimated to save the amount of same percentage of loan default. Although the model's accuracy is not particularly high, the potential savings in losses are already quite substantial."**
 ---
 ## References 
   https://www.kaggle.com/datasets/yasserh/loan-default-dataset/code
 
-  https://www.fsc.gov.tw/userfiles/file/%E9%99%84%E4%BB%B6%E4%B8%89%EF%BC%9A%E6%9C%AC%E5%9C%8B%E9%8A%80%E8%A1%8C%E8%B3%87%E7%94%A2%E5%93%81%E8%B3%AA%E8%A9%95%E4%BC%B0%E5%88%86%E6%9E%90%E7%B5%B1%E8%A8%88%E8%A1%A8113_06.pdf?fbclid=IwY2xjawEyh7tleHRuA2FlbQIxMAABHZoBLp6TD1l5WWABP8HsWeDBX-Ch1YLu-1v3YTXpZuzcFatA_bwevZBUWA_aem_dzaNWu3cPYPq-pmk1gWT3Q
+  
+https://www.fsc.gov.tw/userfiles/file/%E9%99%84%E4%BB%B6%E4%B8%89%EF%BC%9A%E6%9C%AC%E5%9C%8B%E9%8A%80%E8%A1%8C%E8%B3%87%E7%94%A2%E5%93%81%E8%B3%AA%E8%A9%95%E4%BC%B0%E5%88%86%E6%9E%90%E7%B5%B1%E8%A8%88%E8%A1%A8113_06.pdf?fbclid=IwY2xjawEyh7tleHRuA2FlbQIxMAABHZoBLp6TD1l5WWABP8HsWeDBX-Ch1YLu-1v3YTXpZuzcFatA_bwevZBUWA_aem_dzaNWu3cPYPq-pmk1gWT3Q
