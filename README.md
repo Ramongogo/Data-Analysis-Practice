@@ -13,7 +13,7 @@
   
   [Credit Card Customers' Churn Reflection](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/Bank_Churn_Reflection.md)
 ## 2. Twitter NLP(Tensorflow) 🪴
-  [Twitter NLP' Churn Code]()
+  [Twitter NLP' Churn Code](https://github.com/Ramongogo/Data-Analysis-Practice/blob/main/NLP_Code.py)
   
 ## 3. Bank's Loan Default Prediction 💸
 
