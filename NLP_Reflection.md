@@ -1,6 +1,6 @@
 ## Results 
 ---
->**The final selected stacking model composed of ExtraTreesClassifier, RandomForestClassifier, XGBClassifier and LGBMClassifier has a weighted average f1 score of 0.9862, capturing 93% of customers whose credit cards have been inactive for two months and are likely to terminate the bank's credit card contract due to prolonged inactivity ,and estimating not only to save 55% of management cost of inactive credit cards but also reduce capital requirement.**
+>**The deep learning model for Twitter NLP shows strong performance, with training and validation accuracy exceeding 95% and minimal overfitting. However, slight fluctuations in validation loss suggest minor noise or insufficient testing data, which can be further optimized.**
 ---
 ## Process Elaboration
 ### 1. Data Preprocessing
@@ -32,7 +32,16 @@
     * model.add(layers.LSTM(64, dropout=0.1))  # LSTM 
     * model.add(layers.Dense(3, activation='softmax'))  # Output
     * model.build(input_shape=(None, 128)) # batch size
+      
   ![螢幕擷取畫面 2024-12-11 140146](https://github.com/user-attachments/assets/08b2f180-2428-4ab8-9941-2b64d8852627)
+
+### 4. Result
+  * Training and Testing Loss
+    
+  ![Figure_3](https://github.com/user-attachments/assets/0821e924-a85d-478d-94cb-4c7cf4d534da)
+  * Training and Testing Accuracy
+    
+  ![Figure_4](https://github.com/user-attachments/assets/b98764ac-795e-43a5-a2b7-8bb5f87d7e10)
 
   
 
